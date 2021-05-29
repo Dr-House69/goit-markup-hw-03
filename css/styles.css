@@ -177,7 +177,7 @@ body {
   line-height: 1.17;
   text-transform: uppercase;
   color: var(--main-text-color);
-  padding-bottom: 10px;
+  margin-bottom: 10px;
 }
 .feature-description {
   font-size: 14px;
