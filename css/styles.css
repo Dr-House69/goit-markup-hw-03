@@ -10,6 +10,8 @@
   --third-background-color: #f5f4fa;
   --modal-btn-hover-focus-background-color: #188ce8;
   --accent-color: #2196f3;
+  --border-color: #ececec;
+  --main-margin: 30px;
 }
 h1,
 h2,
@@ -36,19 +38,63 @@ img {
 .link {
   text-decoration: none;
 }
+.section {
+  padding-top: 94px;
+  padding-bottom: 94px;
+}
+.container {
+  width: 1200px;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin: 0 auto;
+}
 body {
   font-family: var(--main-font);
   background-color: var(--body-background-color);
   letter-spacing: 0.03em;
   color: var(--third-text-color);
 }
-/* ==NAVIGATION== */
+/* ==HEADER== */
+.header {
+  border-bottom: 1px solid var(--border-color);
+}
+.header-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.navigation {
+  display: flex;
+  align-items: center;
+}
+.menu-list {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.contact {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.menu-list {
+  margin-left: 93px;
+}
+.menu-item:not(:last-child) {
+  margin-right: 50px;
+}
+.contact-item:not(:last-child) {
+  margin-right: 50px;
+}
 .menu-link {
+  display: block;
   font-weight: 500;
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
   color: var(--main-text-color);
+  padding: 32px 0;
 }
 .menu-link:hover,
 .menu-link:focus {
@@ -59,11 +105,13 @@ body {
 }
 .mail-link,
 .phone-link {
+  display: block;
   font-weight: 500;
   font-size: 14px;
   line-height: 1.14;
   letter-spacing: 0.02em;
   color: var(--second-text-color);
+  padding: 32px 0;
 }
 .mail-link:hover,
 .mail-link:focus {
@@ -74,15 +122,21 @@ body {
   color: var(--accent-color);
 }
 /* ==HERO== */
+
 .hero {
   background-color: var(--second-background-color);
+  text-align: center;
+  padding-top: 200px;
+  padding-bottom: 200px;
 }
 .hero-title {
   font-weight: 900;
   font-size: 44px;
-  line-height: 1.36;
+  line-height: 1.364;
   letter-spacing: 0.06em;
   text-transform: uppercase;
+  margin: 0 auto var(--main-margin) auto;
+  width: 696px;
 }
 .modal-btn {
   font-family: inherit;
@@ -93,6 +147,9 @@ body {
   color: var(--third-text-color);
   background-color: var(--accent-color);
   cursor: pointer;
+  box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.15);
+  border-radius: 4px;
+  padding: 10px 32px;
 }
 .modal-btn:hover,
 .modal-btn:focus {
@@ -100,19 +157,51 @@ body {
   background-color: var(--modal-btn-hover-focus-background-color);
 }
 /* ==FEATURES== */
+.feature {
+  padding-top: 94px;
+  padding-bottom: 47px;
+}
+.feature-list {
+  display: flex;
+  /* justify-content: space-between; */
+}
+.feature-item {
+  width: calc((100% - 3 * var(--main-margin)) / 4);
+}
+.feature-item:not(:last-child) {
+  margin-right: var(--main-margin);
+}
 .feature-title {
   font-weight: 700;
   font-size: 14px;
-  line-height: 1.14;
+  line-height: 1.17;
   text-transform: uppercase;
   color: var(--main-text-color);
+  padding-bottom: 10px;
 }
 .feature-description {
   font-size: 14px;
   line-height: 1.71;
   color: var(--second-text-color);
 }
+/* ==WE-CAN-DO== */
+
+.work {
+  padding-top: 47px;
+}
+.work-list {
+  display: flex;
+  /* justify-content: space-between; */
+}
+.work-list-item {
+  width: calc((100% - 2 * var(--main-margin)) / 3);
+}
+.work-list-item:not(:last-child) {
+  margin-right: var(--main-margin);
+}
+
 /* ==TEAM== */
+
 .team {
   background-color: var(--third-background-color);
 }
@@ -120,12 +209,36 @@ body {
   font-weight: 700;
   font-size: 36px;
   line-height: 1.17;
+  text-align: center;
+  margin: 0 0 50px 0;
+  width: 100%;
   color: var(--main-text-color);
+}
+.team-list {
+  display: flex;
+  flex-wrap: wrap;
+  /* justify-content: space-between; */
+  margin-right: calc(-1 * var(--main-margin));
+  margin-bottom: calc(-1 * var(--main-margin));
+}
+.team-item {
+  text-align: center;
+  flex-basis: calc(100% / 4 - var(--main-margin));
+  margin-right: var(--main-margin);
+  margin-bottom: var(--main-margin);
+  background: var(--body-background-color);
+  box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.12), 0px 1px 1px rgba(0, 0, 0, 0.14),
+    0px 2px 1px rgba(0, 0, 0, 0.2);
+  border-radius: 0 0 4px 4px;
+}
+.team-item-text {
+  padding: var(--main-margin);
 }
 .team-title {
   font-weight: 500;
   font-size: 16px;
   line-height: 1.19;
+  margin: 0 0 10px 0;
   color: var(--main-text-color);
 }
 .team-description {
@@ -135,7 +248,26 @@ body {
 }
 /* ==PORTFOLIO== */
 
+/* ===FILTER=== */
+
+.filter-menu {
+  display: flex;
+  justify-content: center;
+  padding-left: 0;
+  padding-right: 0;
+  margin-top: 0;
+  margin-right: -8px;
+  margin-bottom: 50px;
+}
+
+.filter-item {
+  margin-right: 8px;
+}
 .filter-btn {
+  display: block;
+  text-align: center;
+  flex-wrap: wrap;
+  padding: 6px 22px;
   font-family: inherit;
   font-weight: 500;
   font-size: 16px;
@@ -144,11 +276,33 @@ body {
   color: var(--main-text-color);
   background-color: var(--third-background-color);
   cursor: pointer;
+  border: none;
+  border-radius: 4px;
 }
 .filter-btn:hover,
 .filter-btn:focus {
   color: var(--third-text-color);
   background-color: var(--accent-color);
+}
+
+/* ===CARD=== */
+.project-list {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: calc(-1 * var(--main-margin));
+  margin-bottom: calc(-1 * var(--main-margin));
+}
+.project-item {
+  flex-basis: calc(100% / 9 - var(--main-margin));
+  margin-right: var(--main-margin);
+  margin-bottom: var(--main-margin);
+  background-color: var(--body-background-color);
+}
+.project-item-text {
+  padding: 20px 24px;
+  border-left: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+  border-right: 1px solid var(--border-color);
 }
 .project-title {
   font-weight: 700;
@@ -156,6 +310,7 @@ body {
   line-height: 2;
   letter-spacing: 0.06em;
   color: var(--main-text-color);
+  margin: 0 0 4px 0;
 }
 .project-specimen {
   font-size: 16px;
@@ -168,7 +323,14 @@ body {
   font-weight: 700;
   font-size: 26px;
   line-height: 1.19;
+  letter-spacing: 0.03em;
   color: var(--accent-color);
+}
+.address {
+  margin-top: 20px;
+}
+.address-item:not(:last-child) {
+  margin-bottom: 9px;
 }
 .address-link {
   font-style: normal;
@@ -204,4 +366,6 @@ body {
 }
 footer {
   background-color: var(--second-background-color);
+  padding-top: 60px;
+  padding-bottom: 60px;
 }
